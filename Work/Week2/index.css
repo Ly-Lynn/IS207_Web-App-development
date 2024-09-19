@@ -37,3 +37,44 @@ p{
 #uit-logo {
     height: 200px;
 }
+
+.exercise-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    border: 2px solid black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    
+    padding: 8px;
+    text-align: center;
+}
+.tab-1-border {
+    border: 3px solid rgb(3, 105, 17);
+}
+.tab-2-border {
+    border-bottom: 3px solid rgb(0, 0, 0);
+}
+.info {
+    font-weight: bold;
+}
+.tab-title-1 {
+    color: blue;
+    font-size: 25px;
+    background-color: rgba(238, 130, 238, 0.404);
+}
+.tab-title-2 {
+    color: blue;
+    font-size: 25px;
+}
+.tab-color-1{
+    background-color: rgba(192, 250, 255, 0.634);
+}
+.tab-color-2 {
+    background-color: rgba(170, 255, 159, 0.738);
+}
