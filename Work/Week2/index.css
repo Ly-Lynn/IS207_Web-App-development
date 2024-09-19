@@ -1,0 +1,39 @@
+body{
+    margin: 0.5rem;
+}
+
+.title-1, .title-2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+.title-1 {
+    color: rgb(9, 9, 133);
+}
+.title-2{
+    font-style: italic;
+}
+hr {
+    width: 60%;
+}
+p{
+    margin:0
+}
+.doan-1, .doan-2 {
+    line-height: 1.2;
+}
+.doan-1{
+    color:rgb(196, 15, 15);
+}
+.doan-2{
+    margin-top:1rem;
+    color: rgb(192, 13, 192);
+    font-style: italic;
+}
+.tac-gia{
+    font-weight: bolder;
+    font-size: larger;
+    color: blue;
+}
+#uit-logo {
+    height: 200px;
+}
