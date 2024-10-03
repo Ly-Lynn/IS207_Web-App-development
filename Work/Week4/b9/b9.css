@@ -1,0 +1,22 @@
+body {
+    font-size: 15px;
+}
+
+.text-purple {
+    color: purple;
+}
+.hello {
+    font-size: 40px;
+    font-weight: bold;
+}
+.strength-indicator {
+    display: flex;
+    align-items: center;
+}
+.strength-box {
+    width: 20px;
+    height: 10px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+/*  */

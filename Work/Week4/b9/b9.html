@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="b9.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header d-flex justify-content-between align-items-center ml-3 mr-3">
+        <div class="d-flex align-items-center">
+            <img class="logo" src="../images/logo.png" style="width: 300px;">
+        </div>
+        <div>
+            <a href="#" class="">Yahoo!</a>
+            <a href="#" class="">-</a>
+            <a href="#" class="ml-auto">Trợ giúp</a>
+        </div>
+    </div>
+    <div class="header d-flex justify-content-between align-items-center ml-3 mr-3 ">
+        <div class="d-flex align-items-center" style="width: 50%;">
+            <img class="logo" src="../images/face.png" style="width: 200px;">
+            <div class="col">
+                <p class="row hello text-purple">Chào Bạn!</p>
+                <p class="row">Chúng tôi sẽ giúp bạn lập tài khoản Yahoo! theo ba bước rất đơn giản! Bạn chỉ cần trả lời một số câu hỏi đơn giản, chọn ID và mật khẩu, thế là xong.</p>
+            </div>
+        </div>
+        <div class="gap" style="width: 20%"></div>
+        <div class="col d-flex flex-column align-items-start">
+            <p class="mb-2">Bạn đã có ID hoặc địa chỉ Yahoo! Mail?</p>
+            <a href="#" class="btn btn-primary">Đăng Nhập</a>
+            <a href="#" class="mt-2">Quên mật khẩu hoặc Yahoo! ID của bạn?</a>
+        </div>
+    </div>
+    <div class="lang d-flex justify-content-end align-items-center mr-3">
+        <div class="mr-2 text-purple">Tôi thích nhận nội dung bằng tiếng</div>
+        <div class="col-sm-4 dropdown">
+            <select class="form-control">
+                <option>- Chọn Một Mục -</option>
+                <option>Yahoo! Việt Nam</option>
+                <option>Yahoo! English</option>
+                <option>Yahoo! Japanese</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="container d-flex justify-content-center">
+        <form class="m-3" style="width: 800px;" action="">
+            <!-- Section 1 -->
+            <div class="mb-4">
+                <p class="text-purple font-weight-bold">1. Hãy cho chúng tôi biết về bản thân bạn...</p>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Tên của Tôi</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" placeholder="Tên họ">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" placeholder="Tên gọi">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Giới tính</label>
+                    <div class="col-sm-8">
+                        <select class="form-control">
+                            <option>- Chọn Một Mục -</option>
+                            <option>Nam</option>
+                            <option>Nữ</option>
+                            <option>Khác</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Ngày tháng năm sinh</label>
+                    <div class="col-sm-2 pr-1">
+                        <input type="text" class="form-control" placeholder="Ngày">
+                    </div>
+                    <div class="col-sm-4 px-1">
+                        <select class="form-control">
+                            <option>- Chọn Tháng -</option>
+                            <option>- Chọn Tháng -</option>
+                            <option>Tháng 1</option>
+                            <option>Tháng 2</option>
+                            <option>Tháng 3</option>
+                            <option>Tháng 4</option>
+                            <option>Tháng 5</option>
+                            <option>Tháng 6</option>
+                            <option>Tháng 7</option>
+                            <option>Tháng 8</option>
+                            <option>Tháng 9</option>
+                            <option>Tháng 10</option>
+                            <option>Tháng 11</option>
+                            <option>Tháng 12</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2 pl-1">
+                        <input type="text" class="form-control" placeholder="Năm">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Tôi sống tại</label>
+                    <div class="col-sm-8">
+                        <select class="form-control">
+                            <option>Việt Nam</option>
+                            <option>Mỹ</option>
+                            <option>Nhật Bản</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Mã bưu chính</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <!-- Section 2 -->
+            <div class="mb-4">
+                <p class="text-purple font-weight-bold">2. Chọn ID và mật khẩu</p>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Yahoo! ID và Email</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-sm-3 pt-2">
+                        <span style="font-weight: bold; font-size: large;">@yahoo.com.vn</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Mật Khẩu</label>
+                    <div class="col-sm-5">
+                        <input type="password" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-sm-3">
+                        <small>Mức độ mật khẩu</small>
+                        <div class="strength-indicator">
+                            <div class="strength-box"></div>
+                            <div class="strength-box"></div>
+                            <div class="strength-box"></div>
+                            <div class="strength-box"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Đánh Lại Mật Khẩu</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <!-- Section 3 -->
+            <div class="mb-4">
+                <p class="text-purple font-weight-bold">3. Để đề phòng trường hợp bạn quên ID hoặc mật khẩu...</p>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Email Thay Thế Khác</label>
+                    <div class="col-sm-8">
+                        <input type="email" class="form-control" placeholder="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Câu Hỏi Bảo Mật</label>
+                    <div class="col-sm-8">
+                        <select class="form-control">
+                            <option>- Chọn Một Mục -</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Câu Trả Lời của Bạn</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="form-check form-group">
+                <div class="text-purple">Còn một số chi tiết nữa ...</div>
+                <div class="d-flex align-items-center">
+                    <label class="form-check-label mr-3" style="font-style: italic ;" for="exampleCheck1">Các Lựa Chọn Ưu Tiên Về Tiếp Thị</label>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                </div>
+                <span class="d-block mt-2" style="font-size: small;">Đôi khi Công ty Compaq có thể liên lạc với tôi về các chương trình chào hàng đặc biệt, các chương trình khuyến mãi và các tính năng Yahoo!.</span>
+            </div>
+            
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Đăng Ký</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
