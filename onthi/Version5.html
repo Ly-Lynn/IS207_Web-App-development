@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Items from Listbox with Editable Quantity and Delete</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .total-row {
+      font-weight: bold;
+      background-color: #f9f9f9;
+    }
+    input[type="number"] {
+      width: 50px;
+    }
+    .deleteBtn {
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Add Items from Listbox to Table</h1>
+
+  <div>
+    <!-- Listbox cho phép chọn nhiều mục -->
+    <select class="itemList" multiple>
+      <option value="100">Apple</option>
+      <option value="200">Banana</option>
+      <option value="300">Orange</option>
+      <option value="400">Mango</option>
+      <option value="500">Pineapple</option>
+    </select>
+    <button class="addItemBtn">Add</button>
+  </div>
+
+  <table class="itemTable">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Action</th> <!-- Thêm cột chức năng -->
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Các mục sẽ được thêm vào đây -->
+    </tbody>
+    <tfoot>
+      <tr class="total-row">
+        <td colspan="2">Total Price</td>
+        <td class="totalPrice">0</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <script>
+    $(document).ready(function() {
+      // Hàm cập nhật tổng giá
+      function updateTotalPrice() {
+        var total = 0;
+        // Duyệt qua từng hàng và cộng dồn giá trị ở cột Price
+        $('.itemTable tbody tr').each(function() {
+          var price = parseInt($(this).find('td:nth-child(3)').text());
+          total += price;
+        });
+        // Cập nhật tổng giá ở dòng Total Price
+        $('.totalPrice').text(total);
+      }
+
+      // Cập nhật giá của một dòng khi thay đổi số lượng
+      function updateRowPrice(row, quantity, value) {
+        var newPrice = quantity * value;
+        row.find('td:nth-child(3)').text(newPrice); // Cập nhật cột Price
+        updateTotalPrice(); // Cập nhật tổng giá
+      }
+
+      // Khi nút "Add" được nhấn
+      $('.addItemBtn').on('click', function() {
+        // Lấy tất cả các mục đã chọn trong listbox
+        $('.itemList option:selected').each(function() {
+          var item = $(this).text(); // Lấy tên mục
+          var value = parseInt($(this).val()); // Lấy giá trị (value) của mục
+
+          // Kiểm tra nếu mục đã tồn tại trong bảng
+          var found = false;
+          $('.itemTable tbody tr').each(function() {
+            var rowItem = $(this).find('td:first').text();
+            if(rowItem === item) {
+              // Nếu mục đã tồn tại, tăng số lượng lên 1
+              var quantityInput = $(this).find('input.quantity');
+              var currentQuantity = parseInt(quantityInput.val());
+              
+              // Tăng số lượng
+              var newQuantity = currentQuantity + 1;
+              quantityInput.val(newQuantity);
+
+              // Tính lại giá cho dòng
+              updateRowPrice($(this), newQuantity, value);
+
+              found = true;
+            }
+          });
+
+          // Nếu mục chưa tồn tại, thêm dòng mới với giá trị
+          if(!found) {
+            var newRow = '<tr><td>' + item + '</td>' +
+              '<td><input type="number" class="quantity" value="1" min="1"></td>' +
+              '<td giasanpham="' + value + '">' + value + '</td>' +
+              '<td><button class="deleteBtn">Delete</button></td></tr>'; // Thêm nút Delete
+            
+            $('.itemTable tbody').append(newRow);
+          }
+        });
+
+        // Cập nhật tổng giá sau khi thêm mục
+        updateTotalPrice();
+      });
+
+      // Lắng nghe sự kiện nhấn "Enter" trong ô số lượng
+      $(document).on('keypress', '.quantity', function(e) {
+        if(e.which == 13) { // Khi nhấn phím Enter
+          var quantity = parseInt($(this).val()); // Lấy số lượng mới
+          var row = $(this).closest('tr'); // Lấy dòng hiện tại
+          
+          //var value = parseInt(row.find('td:nth-child(3)').data('value')); // Lấy giá trị gốc từ data-value
+          //lấy giá của 1 sản phầm tại dòng này 
+          var value = parseInt(row.find('td:nth-child(3)').attr('giasanpham')); // Lấy giá trị gốc từ data-value
+          alert(value);
+          if (quantity > 0) {
+            // Cập nhật lại giá khi số lượng thay đổi
+            updateRowPrice(row, quantity, value);
+          }
+        }
+      });
+
+      // Xóa dòng khi nhấn nút Delete
+      $(document).on('click', '.deleteBtn', function() {
+        //var row = $(this).closest('tr'); // Lấy dòng hiện tại
+        //row.remove(); // Xóa dòng
+        $(this).parent().parent().remove();
+        updateTotalPrice(); // Cập nhật tổng giá
+      });
+    });
+  </script>
+
+</body>
+</html>

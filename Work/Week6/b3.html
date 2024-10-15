@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>MENU 2</title>
+        <style>
+            body {
+                padding: 1.5rem;
+            }
+            table {
+                border: 2px solid black;
+                border-collapse: collapse;
+                width: 100%;
+                max-width: 500px;
+            }
+            th, td {
+                border: 1px solid black;
+                padding: 0.5rem;
+            }
+            .price-table, .order-form{
+                max-width: 300px;
+            }
+            .sub-table {
+                max-width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container justify-content-center d-flex flex-column text-center">
+            <h1 class="text-center">MENU 2</h1>
+            <div class="m-3 return">
+                <button onclick="window.location.href='all.html'">Return</button>
+            </div>
+            <table class="price-table m-3">
+                <thead>
+                    <th>Food</th>
+                    <th>Name</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bún bò</td>
+                        <td>20.000</td>
+                    </tr>
+                    <tr>
+                        <td>Hủ tiếu</td>
+                        <td>18.000</td>
+                    </tr>
+                    <tr>
+                        <td>Bánh canh</td>
+                        <td>17.000</td>
+                    </tr>
+                    <tr>
+                        <td>Phở bò</td>
+                        <td>19.000</td>
+                    </tr>
+                    <tr>
+                        <td>Nuôi</td>
+                        <td>15.000</td>
+                    </tr>
+                    <tr>
+                        <td>Bánh mì thịt</td>
+                        <td>12.000</td>
+                    </tr>
+                    <tr>
+                        <td>Bánh cuốn</td>
+                        <td>15.000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="order-form m-3">
+                 <thead>
+                    <tr>
+                        <th id="curr-day"></th>
+                        <th id="curr-employee">Nguyen Van A</th>
+                    </tr>
+                    <tr>
+                        <th>Table</th>
+                        <th>Food</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                    <tr>
+                        <td>
+                            <select class="table-choice">
+                                <option value="tab-1">Table 1</option>
+                                <option value="tab-2">Table 2</option>
+                                <option value="tab-3">Table 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="food-choice">
+                                <option value="20000">Bún bò</option>
+                                <option value="18000">Hủ tiếu</option>
+                                <option value="17000">Bánh canh</option>
+                                <option value="19000">Phở bò</option>
+                                <option value="15000">Nuôi</option>
+                                <option value="12000">Bánh mì thịt</option>
+                                <option value="15000">Bánh cuốn</option>
+                            </select>
+                        </td>
+                    </tr>
+                 </tbody>
+            </table>
+            <div class="tables-container container">
+                <div class="row">
+                    <div class="col table">
+                        <table id="tab-1">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">Table 1</th>
+                                </tr>
+                                <tr>
+                                    <th>Food</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add food order info of Table 1 -->
+                                 <tr>
+                                    <td>Total</td>
+                                    <td colspan="3">0</td>
+                                 </tr>
+                                 <tr>
+                                    <td colspan="4">
+                                        <button class="printBtn">Print bill</button>
+                                    </td>
+                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col table">
+                        <table id="tab-2">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">Table 2</th>
+                                </tr>
+                                <tr>
+                                    <th>Food</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add food order info of Table 1 -->
+                                 <tr>
+                                    <td>Total</td>
+                                    <td colspan="3">0</td>
+                                 </tr>
+                                 <tr>
+                                    <td colspan="4">
+                                        <button class="printBtn"">Print bill</button>
+                                    </td>
+                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col table">
+                        <table id="tab-3">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">Table 3</th>
+                                </tr>
+                                <tr>
+                                    <th>Food</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add food order info of Table 1 -->
+                                 <tr>
+                                    <td>Total</td>
+                                    <td colspan="3">0</td>
+                                 </tr>
+                                 <tr>
+                                    <td colspan="4">
+                                        <button class="printBtn"">Print bill</button>
+                                    </td>
+                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="bill-container container m-3 d-flex justify-content-center">
+                <table>
+                    <thead>
+                        <th colspan="2">Bill</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Date</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Employee</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Table</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" >
+                                <table class="sub-table">
+                                    <thead>
+                                        <th>Food</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td colspan="2"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function(){
+            // Datetime
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const curr = new Date();
+            let today = days[curr.getDay()]+', '+curr.getDate()+'/'+curr.getMonth()+'/'+curr.getFullYear()+', '+curr.getHours()+':'+curr.getMinutes();
+            $('#curr-day').text(today)
+
+            // Total price
+            function findPrice(name) {
+                var price = null
+                $('.food-choice option').each(function() {
+                    if ($(this).text() === name){
+                        price =  parseInt($(this).val())
+                        return false
+                    }
+                })
+                return parseInt(price)
+            }
+            function TotalPrice (table) {
+                var total = 0;
+                $(`#${table} tbody tr`).slice(0,-2).each(function() {
+                    var name = $(this).find('td:first').text()
+                    var quantity = parseInt($(this).find('td:nth-child(2) input').val())
+                    var price = findPrice(name)
+                    total += (quantity * price)
+                })
+                
+                $(`#${table} tbody tr:nth-last-child(2) td:last`).text(total)
+            }
+            function updateRowPrice (row, quantity, value) {
+                row.find('td:nth-child(3)').text(parseInt(quantity) * parseInt(value))
+            }
+            
+            // Trigger event select of food-choice
+            $('.food-choice').on("change", function() {
+                var curr_tab = $('.table-choice option:selected').val()
+                var curr_food = $(this).find('option:selected')
+                var body_total = $(`#${curr_tab} tbody tr:nth-last-child(2)`)
+                var found = false
+                var curr_tab_food
+                $(`#${curr_tab} tbody tr`).each(function() {
+                    var food_name = $(this).find('td:first').text()
+                    if (food_name === curr_food.text()) {
+                        found = true
+                        curr_tab_food = $(this)
+                    }
+                })
+                if (found){
+                    var quantity = parseInt(curr_tab_food.find('td:nth-child(2) input').val())
+                    curr_tab_food.find('td:nth-child(2) input').val(quantity+1)
+                    updateRowPrice(curr_tab_food, quantity+1, curr_food.val())
+                }
+                else {
+                    body_total.before(
+                        `<tr>
+                            <td>${curr_food.text()}</td>
+                            <td>
+                                <input class='quantity' type="number" value='1'>
+                            </td>
+                            <td>${curr_food.val()}</td>
+                            <td>
+                                <button class='deleteBtn'>Delete</button>
+                            </td>
+                        </tr>`
+                    )
+                    $('.quantity').on("input", function() {
+                        var curr_tab = $(this).closest('table').attr('id')
+                        var curr_row = $(this).closest('tr')
+                        var name = curr_row.find('td:first').text()
+                        var price = findPrice(name)
+                        updateRowPrice(curr_row, $(this).val(), price)
+                        TotalPrice(curr_tab)
+                    })
+                    $('.deleteBtn').on("click", function() {
+                        var curr_row = $(this).closest('tr')
+                        var curr_tab = curr_row.closest('table').attr('id')
+                        curr_row.remove()
+                        TotalPrice(curr_tab)
+
+                    })
+                }
+                TotalPrice(curr_tab)
+            })
+            
+            // Print bill
+            $('.printBtn').on("click", function() {
+                $('.sub-table tbody tr').slice(0, -1).each(function(){
+                    $(this).remove()
+                })
+                $('.bill-container table tbody tr:first td:last').text(today)
+                var curr_tab = $(this).closest('table').attr('id')
+                var employee_name = $('.order-form thead tr:first th:last').text()
+                $('.bill-container table tbody tr:nth-child(2) td:last').text(employee_name)
+                $('.bill-container table tbody tr:nth-child(3) td:last').text($(`#${curr_tab} thead tr:first th`).text())
+                var total_sub_table = $('.sub-table tr:last')
+                $(`#${curr_tab} tbody tr`).slice(0, -2).each(function() {
+                    var curr_td = $(this).find('td')
+                    var tag = `<tr>
+                    <td>${curr_td.eq(0).text()}</td>
+                        <td>${curr_td.eq(1).find('input').val()}</td>
+                        <td>${curr_td.eq(2).text()}</td>
+                    </tr>`
+                    total_sub_table.before(tag)
+                })
+                total_sub_table.find('td:last').text($(`#${curr_tab} tbody tr:nth-last-child(2) td:last`).text())
+            })
+        })
+    </script>
+</html>

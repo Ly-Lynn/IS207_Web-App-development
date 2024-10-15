@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Ticket Booking</title>
+        <style>
+            body {
+                padding: 1.5rem;
+            }
+            table {
+                border: 2px solid black;
+                border-collapse: collapse;
+                width: 100%;
+                max-width: 500px;
+            }
+            th, td {
+                border: 1px solid black;
+                padding: 0.5rem;
+            }
+            .price-table, .order-form{
+                max-width: 300px;
+            }
+            .chairs-total {
+                max-width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="container justify-content-center d-flex flex-column text-center">
+            <h1 class="text-center">Ticket Booking</h1>
+            <div class="m-3 return">
+                <button onclick="window.location.href='all.html'">Return</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <table class="booking-table m-3">
+                        <thead>
+                            <th colspan="2">Ticket Booking</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Date</td>
+                                <td>
+                                    <input type="text" placeholder="dd/mm/yyyy">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Movie</td>
+                                <td>
+                                    <select name="movie" id="movie-choice">
+                                        <option value="">Yêu em bất chấp</option>
+                                        <option value="">Tháng năm rực rỡ</option>
+                                        <option value="">Và em sẽ đến</option>
+                                        <option value="">Chuyện ma lúc ba giờ sáng</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Showtime</td>
+                                <td>
+                                    <select name="showtime" id="showtime-choice">
+                                        <option value="45000">9h-12h</option>
+                                        <option value="45000">13h-16h</option>
+                                        <option value="55000">17h-20h</option>
+                                        <option value="35000">22h-2h</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Room</td>
+                                <td>
+                                    <select name="room" id="room-choice">
+                                        <option value="1.0">Bronze</option>
+                                        <option value="1.2">Silver</option>
+                                        <option value="1.5">Gold</option>
+                                        <option value="2.0">Diamond</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chairs</td>
+                                <td>
+                                    <select name="chairs" id="chairs-choice" multiple>
+                                        <option value="">Chair 1</option>
+                                        <option value="">Chair 2</option>
+                                        <option value="">Chair 3</option>
+                                        <option value="">Chair 4</option>
+                                        <option value="">Chair 5</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <button class="buyBtn">Buy Ticket</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <table class="confirm-form m-3">
+                        <thead>
+                            <th colspan="2">Ticket Information</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td>Nguyen Van A</td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Movie</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Showtime</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Room</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <table class="chairs-total">
+                                        <thead>
+                                            <th>Chair</th>
+                                            <th>Price</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Total price</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function() {
+            $('.buyBtn').on("click", function() {
+                $('.chairs-total tbody tr').slice(0, -1).each(function() {
+                    $(this).remove()
+                })
+                var curr_tab = $('.booking-table tbody')
+
+                var date = curr_tab.find('tr:first td:last input').val()
+                var movie = curr_tab.find('tr:nth-child(2) td:last select option:selected').text()
+                var showtime = curr_tab.find('tr:nth-child(3) td:last select option:selected').text()
+                var show_val = parseInt(curr_tab.find('tr:nth-child(3) td:last select option:selected').val())
+                var room = curr_tab.find('tr:nth-child(4) td:last select option:selected').text()
+                var room_val = parseFloat(curr_tab.find('tr:nth-child(4) td:last select option:selected').val())
+
+                // update value
+                var sub_tab = $('.confirm-form tbody')
+                sub_tab.find('tr:nth-child(2) td:last').text(date)
+                sub_tab.find('tr:nth-child(3) td:last').text(movie)
+                sub_tab.find('tr:nth-child(4) td:last').text(showtime)
+                sub_tab.find('tr:nth-child(5) td:last').text(room)
+
+                var total_val = show_val * room_val
+                var sub_tab_last = sub_tab.find('tr:last')
+                var total_chairs = 0
+                curr_tab.find('tr:nth-last-child(2) td:last select option:selected').each(function() {
+                    var name = $(this).text()
+                    var tag = `<tr>
+                                <td>${name}</td>
+                                <td>${total_val}</td>
+                            </tr>`
+                    sub_tab_last.before(tag)
+                    total_chairs += 1
+                })
+                sub_tab_last.find('td:last').text(parseInt(total_chairs) * total_val)
+            })
+        }) 
+    </script>
+</html>
